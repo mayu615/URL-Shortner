@@ -24,23 +24,21 @@ This is a simple URL Shortener web application built using **Node.js**, **Expres
    ```bash
    git clone https://github.com/mayu615/URL-Shortner.git
    cd URL-Shortner
-2. Install dependencies
-   bash
+2. Install dependencies -
    npm install
 
-3. Configure environment variables
+3. Configure environment variables -
    Create a .env file in the root directory and add your MongoDB URI:
    MONGODB_URI=your_mongodb_connection_string
    
-4. Start the server
+4. Start the server -
    node index.js
    
 5. Visit the app
    Open your browser and go to:
    http://localhost:3000
-   
-6. Deployment
-   You can deploy this project to platforms like:
+
+ 6. You can deploy this project to platforms like:
    Render
    Vercel (frontend only)
    Heroku
