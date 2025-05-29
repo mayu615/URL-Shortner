@@ -1,10 +1,16 @@
-require("dotenv").config();
-const express = require("express");
-const mongoose = require("mongoose");
-const { nanoid } = require("nanoid");
-const QRCode = require("qrcode");
-const Url = require("./models/url");
-const path = require("path");
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
+import mongoose from "mongoose";
+import { nanoid } from "nanoid";
+import QRCode from "qrcode";
+import Url from "./models/url.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
