@@ -4,10 +4,12 @@ const urlSchema = new mongoose.Schema({
     shortId: { 
         type: String,
         unique: true,
+        required: true,
     },
-    originalUrl: String,
-},
-{ timestamps: true },
-);
+    originalUrl: {
+        type: String,
+        required: true,
+    },
+}, { timestamps: true });
 
 module.exports = mongoose.model("Url", urlSchema);
