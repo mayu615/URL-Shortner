@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
@@ -29,6 +30,11 @@ app.get("/", (req, res) => {
 app.post("/shorten", async (req, res) => {
   try {
     const { url } = req.body;
+
+    console.log("🔍 Received URL:", url); 
+
+    if (!url) return res.status(400).json({ error: "URL is required" });
+
     const shortId = nanoid(6);
     const shortUrl = `${req.protocol}://${req.get("host")}/${shortId}`;
 
