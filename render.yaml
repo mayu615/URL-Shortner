@@ -2,6 +2,7 @@ services:
   - type: web
     name: url-shortener
     env: node
+    plan: free       
     branch: main
     buildCommand: npm install
     startCommand: npm start
