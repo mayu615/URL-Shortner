@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: url-shortener
+    env: node
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: your_mongodb_atlas_uri
